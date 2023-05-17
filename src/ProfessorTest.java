@@ -3,6 +3,10 @@ public class ProfessorTest {
 
         Professor p1 = new Professor("Development", 123, 3600.0);
 
+
+        boolean autenticou = p1.autentica(3032);
+        boolean authentic = p1.autentica(3032);
+
         System.out.println("---------------------------------------------------------------------");
 
 

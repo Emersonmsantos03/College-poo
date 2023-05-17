@@ -1,14 +1,17 @@
-public class Professor extends User{
+public class Professor extends User implements Login{
 
     private String schoolSubject;
     private int teacherLicence;
     private double balance;
     private double salary;
 
+    private Authentic autenticador;
+
     public Professor(String schoolSubject, int teacherLicence, double salary) {
         this.schoolSubject = schoolSubject;
         this.teacherLicence = teacherLicence;
         this.balance = salary;
+        this.autenticador = new Authentic();
     }
 
 
@@ -60,4 +63,15 @@ public class Professor extends User{
         }
 
     }
-}
+    @Override
+    public void setSenha(int senha){
+        this.autenticador.setSenha(senha);
+
+    }
+    @Override
+    public boolean autentica(int senha){
+        return this.autenticador.autentica(senha);
+    }
+
+    }
+
